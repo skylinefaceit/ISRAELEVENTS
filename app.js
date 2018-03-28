@@ -121,7 +121,7 @@ client.on("message", async message => {
   
   
   if(command === "say") {
-    if(!message.member.roles.some(r=>["Admins", "Moderators", "CSGOIL"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Owner", "Moderators"].includes(r.name)) )
     return message.reply("Sorry, you don't have permissions to use this!");   
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
@@ -136,7 +136,7 @@ client.on("message", async message => {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["Administrator", "Moderator", "CSGOIL"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Moderators", "Owner"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
