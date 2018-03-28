@@ -66,7 +66,7 @@ client.on("message", async message => {
   
   
   if(command === "warn") {
-    if(!message.member.roles.some(r=>["Admins", "CSGOIL"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Owner", "Moderators"].includes(r.name)) )
     return message.reply("Sorry, you don't have permissions to use this!");
     
     // Gets the username and puts it in warnUser.
@@ -95,7 +95,7 @@ client.on("message", async message => {
   
  
   if(command === "dm") {
-    if(!message.member.roles.some(r=>["Admins", "CSGOIL", "Moderators"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Owner", "Moderators"].includes(r.name)) )
     return message.reply("Sorry you don't have premission to use that!")
    
     // Gets the username and puts it in warnUser.
@@ -116,61 +116,8 @@ client.on("message", async message => {
     
       
   }
-  
-
 
   
-  
-  
-  
-
-  
-  
-  //SOCIAL COMMANDS
-  
-  
-  if(command === "socialtwitter") { 
-  
-    message.channel.send("Twitter - https://twitter.com/officialcsgoil")
-    
-  }
-  
-  if(command === "socialinsta") {
-    message.channel.send("Instagram - https://www.instagram.com/csgoilfaceit/")
-  }
-  
-  
-  if(command === "info") {
-    message.channel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "CSGOIL OFFICIAL DISCORD BOT",
-    url: "https://google.com",
-    description: "CSGOIL Bot uses an [open-sorcue code](https://github.com/skylinefaceit/csgoilDISCORDbot).",
-    fields: [{
-        name: "FACEIT",
-        value: "Organzation [link](https://www.faceit.com/en/organizers/47f673aa-78d6-454b-8b72-34641263ed22/CSGOIL)."
-      },
-      {
-        name: "Owner",
-        value: "[FACEIT](https://www.faceit.com/en/players/SaarFACEIT), Discord @SkylineFACEIT#1825."
-      },
-      {
-        name: "Moderators",
-        value: "grouch: [FACEIT](https://www.faceit.com/en/players/grouch), Discord @talpa#0746"
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "|"
-    }
-  }
-});
-  }
   
   
   if(command === "say") {
@@ -212,10 +159,7 @@ client.on("message", async message => {
 
   }
 
-  if(command === "faceit") {
-    message.channel.send("Faceit page link - https://www.faceit.com/en/organizers/47f673aa-78d6-454b-8b72-34641263ed22/CSGOIL")
-    
-  }
+
   
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
